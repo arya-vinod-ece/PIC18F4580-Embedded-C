@@ -1,0 +1,26 @@
+#include<pic18.h>
+void main(void)
+{
+    TRISB=0XFF;
+    TRISC=0X00;
+    ADCON1=0X0F;
+    while(1)
+    {
+    if(RB0==0)
+    {
+        RC0=1;
+        RC1=0;
+    }
+    if(RB1==0)
+    {
+        RC0=0;
+        RC1=1;
+    }
+    if(RB2==0)
+    {
+        RC0=0;
+        RC1=0;
+    }
+    }
+    return;
+}

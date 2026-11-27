@@ -1,0 +1,34 @@
+#include<pic18.h>
+void main(void)
+{
+    TRISC=0X00;
+    TRISB=0XFF;
+    ADCON1=0X0F;
+    T2CON=0X07;
+    TMR2=0;
+    PR2=0XFF;
+    while(1)
+    {
+    if(RB0==0)
+    {
+        CCP1CON=0X0C;
+        CCPR1L=0X40;
+        RC0=1;
+        RC1=0;
+    }
+    if(RB1==0)
+    {
+        CCP1CON=0X3C;
+        CCPR1L=0X7F;
+        RC0=1;
+        RC1=0;
+    }
+    if(RB2==0)
+    {
+        CCP1CON=0X0C;
+        CCPR1L=0XC0;
+        RC0=1;
+        RC1=0;
+    }
+    }  
+}

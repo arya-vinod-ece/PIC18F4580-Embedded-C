@@ -1,0 +1,27 @@
+#include<pic18.h>
+void main(void)
+{
+    TRISC=0X00;
+    TRISB=0XFF;
+    ADCON1=0X0F;
+    while(1)
+    {
+        if(RB0==0)
+        {
+            LATC=0X15;
+        }
+        if(RB1==0)
+        {
+            LATC=0X2A;
+        }
+        if(RB2==0)
+        {
+            LATC=0X05;
+        }
+        if(RB3==0)
+        {
+            LATC=0X11;
+        }
+    }
+    return;
+}
